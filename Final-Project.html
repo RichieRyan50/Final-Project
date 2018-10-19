@@ -129,7 +129,61 @@ $(document).ready(function () {
 </div>
 
 
-<pre class="r"><code>#Precis: The &quot;fandango_score_comparison.csv&quot; dataset contains every film that has a Rotten Tomatoes rating, a RT User rating, a Metacritic score, a Metacritic User score, and IMDb score, and at least 30 fan reviews on Fandango. The data from Fandango was pulled on Aug. 24, 2015. The &quot;fandango_scrape.csv&quot; dataset contains every film that was pulled from Fandango. I will use this data to perform analyses on movie ratings from various sources. I may possibly do analyses that compare user and critic ratings among various ratings sources.</code></pre>
+<pre class="r"><code>#Precis: The &quot;fandango_score_comparison.csv&quot; dataset contains every film that has a Rotten Tomatoes rating, a RT User rating, a Metacritic score, a Metacritic User score, and IMDb score, and at least 30 fan reviews on Fandango. The data from Fandango was pulled on Aug. 24, 2015. The &quot;fandango_scrape.csv&quot; dataset contains every film that was pulled from Fandango. I will use this data to perform analyses on movie ratings from various sources. I may possibly do analyses that compare user and critic ratings among various ratings sources.
+
+
+#Summary Statistics:
+summary(scrape)</code></pre>
+<pre><code>##      FILM               STARS           RATING          VOTES        
+##  Length:510         Min.   :0.000   Min.   :0.000   Min.   :    0.0  
+##  Class :character   1st Qu.:3.500   1st Qu.:3.025   1st Qu.:    2.0  
+##  Mode  :character   Median :4.000   Median :3.800   Median :   17.5  
+##                     Mean   :3.532   Mean   :3.352   Mean   : 1134.4  
+##                     3rd Qu.:4.500   3rd Qu.:4.300   3rd Qu.:  183.5  
+##                     Max.   :5.000   Max.   :5.000   Max.   :34846.0</code></pre>
+<pre class="r"><code>summary(compare)</code></pre>
+<pre><code>##      FILM           RottenTomatoes   RottenTomatoes_User   Metacritic   
+##  Length:146         Min.   :  5.00   Min.   :20.00       Min.   :13.00  
+##  Class :character   1st Qu.: 31.25   1st Qu.:50.00       1st Qu.:43.50  
+##  Mode  :character   Median : 63.50   Median :66.50       Median :59.00  
+##                     Mean   : 60.85   Mean   :63.88       Mean   :58.81  
+##                     3rd Qu.: 89.00   3rd Qu.:81.00       3rd Qu.:75.00  
+##                     Max.   :100.00   Max.   :94.00       Max.   :94.00  
+##  Metacritic_User      IMDB       Fandango_Stars  Fandango_Ratingvalue
+##  Min.   :2.400   Min.   :4.000   Min.   :3.000   Min.   :2.700       
+##  1st Qu.:5.700   1st Qu.:6.300   1st Qu.:3.500   1st Qu.:3.500       
+##  Median :6.850   Median :6.900   Median :4.000   Median :3.900       
+##  Mean   :6.519   Mean   :6.737   Mean   :4.089   Mean   :3.845       
+##  3rd Qu.:7.500   3rd Qu.:7.400   3rd Qu.:4.500   3rd Qu.:4.200       
+##  Max.   :9.600   Max.   :8.600   Max.   :5.000   Max.   :4.800       
+##     RT_norm       RT_user_norm   Metacritic_norm Metacritic_user_nom
+##  Min.   :0.250   Min.   :1.000   Min.   :0.650   Min.   :1.200      
+##  1st Qu.:1.562   1st Qu.:2.500   1st Qu.:2.175   1st Qu.:2.850      
+##  Median :3.175   Median :3.325   Median :2.950   Median :3.425      
+##  Mean   :3.042   Mean   :3.194   Mean   :2.940   Mean   :3.260      
+##  3rd Qu.:4.450   3rd Qu.:4.050   3rd Qu.:3.750   3rd Qu.:3.750      
+##  Max.   :5.000   Max.   :4.700   Max.   :4.700   Max.   :4.800      
+##    IMDB_norm     RT_norm_round   RT_user_norm_round Metacritic_norm_round
+##  Min.   :2.000   Min.   :0.500   Min.   :1.000      Min.   :0.500        
+##  1st Qu.:3.150   1st Qu.:1.500   1st Qu.:2.500      1st Qu.:2.125        
+##  Median :3.450   Median :3.000   Median :3.500      Median :3.000        
+##  Mean   :3.368   Mean   :3.065   Mean   :3.226      Mean   :2.973        
+##  3rd Qu.:3.700   3rd Qu.:4.500   3rd Qu.:4.000      3rd Qu.:4.000        
+##  Max.   :4.300   Max.   :5.000   Max.   :4.500      Max.   :4.500        
+##  Metacritic_user_norm_round IMDB_norm_round Metacritic_user_vote_count
+##  Min.   :1.000              Min.   :2.00    Min.   :   4.00           
+##  1st Qu.:3.000              1st Qu.:3.00    1st Qu.:  33.25           
+##  Median :3.500              Median :3.50    Median :  72.50           
+##  Mean   :3.271              Mean   :3.38    Mean   : 185.71           
+##  3rd Qu.:4.000              3rd Qu.:3.50    3rd Qu.: 168.50           
+##  Max.   :5.000              Max.   :4.50    Max.   :2375.00           
+##  IMDB_user_vote_count Fandango_votes    Fandango_Difference
+##  Min.   :   243       Min.   :   35.0   Min.   :0.0000     
+##  1st Qu.:  5627       1st Qu.:  222.2   1st Qu.:0.1000     
+##  Median : 19103       Median : 1446.0   Median :0.2000     
+##  Mean   : 42846       Mean   : 3848.8   Mean   :0.2438     
+##  3rd Qu.: 45186       3rd Qu.: 4439.5   3rd Qu.:0.4000     
+##  Max.   :334164       Max.   :34846.0   Max.   :0.5000</code></pre>
 
 
 
