@@ -1,0 +1,15 @@
+---
+title: "Final-Project"
+author: "Richard Ryan"
+date: "10/18/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+read_csv("fandango/fandango_scrape.csv")
+read_csv("fandango/fandango_score_comparison.csv")
+```
+
