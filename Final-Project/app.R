@@ -36,16 +36,14 @@ server <- function(input, output) {
       
      movie_ratings <- left_join(compare, scrape, by = "FILM") %>% 
        filter(Fandango_Stars == input$Fandango_Stars) %>% 
-       select(FILM) %>% 
-       count(FILM)
+       select(c(RATING, Fandango_Difference))
       
       
-      ggplot(data = movie_ratings, aes(x = FILM)) + 
-        geom_histogram(binwidth = 0.5, stat = "count", na.rm = TRUE) + 
-        labs(x = "Film",
-             y = "Stars",
-             title = "Film Star Ratings",
-             caption = "Number of Films with Specific Star Ratings")
+      ggplot(data = movie_ratings, aes(x = RATING, y = Fandango_Difference)) + 
+        geom_point() + 
+        labs(x = "Rating",
+             y = "Difference",
+             title = "Film Rating and Star Difference")
    })
 }
 
