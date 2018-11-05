@@ -21,4 +21,6 @@ compare <- read_csv("fandango/fandango_score_comparison.csv")
 #Summary Statistics:
 summary(scrape)
 summary(compare)
+
+movie_ratings <- left_join(compare, scrape, by = "FILM")
 ```
