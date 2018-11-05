@@ -2,7 +2,6 @@ library(shiny)
 library(tidyverse)
 compare <- read_csv("~/Desktop/Gov 1005 Final Project/Final-Project/fandango/fandango_score_comparison.csv")
 scrape <- read_csv("~/Desktop/Gov 1005 Final Project/Final-Project/fandango/fandango_scrape.csv")
-movie_ratings <- left_join(compare, scrape, by = "FILM")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -34,16 +33,16 @@ server <- function(input, output) {
    
    output$fandstarPlot <- renderPlot({
       
-     movie_ratings <- left_join(compare, scrape, by = "FILM") %>% 
-       filter(Fandango_Stars == input$Fandango_Stars) %>% 
-       select(c(RATING, Fandango_Difference))
+     movie_ratings <- left_join(compare, scrape, by = "FILM")
+     
+     movie_ratings %>% 
+       filter(Fandango_Stars == input$Fandango_Stars)
       
       
-      ggplot(data = movie_ratings, aes(x = RATING, y = Fandango_Difference)) + 
-        geom_point() + 
-        labs(x = "Rating",
-             y = "Difference",
-             title = "Film Rating and Star Difference")
+      ggplot(data = movie_ratings, aes(x = RATING)) + 
+        geom_histogram(na.rm = TRUE, stat = "count") + 
+        labs(x = "Fandango Absolute Rating", 
+             title = "Count of Films' Fandango Stars and Absolute Ratings")
    })
 }
 
