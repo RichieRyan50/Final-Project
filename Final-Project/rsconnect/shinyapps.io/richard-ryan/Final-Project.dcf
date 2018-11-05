@@ -1,0 +1,13 @@
+name: Final-Project
+title: Final-Project
+username:
+account: richard-ryan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 552613
+bundleId: 1683923
+url: https://richard-ryan.shinyapps.io/Final-Project/
+when: 1541453049.89482
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: fandango_score_comparison.csv|fandango_scrape.csv|Final-Project.html|Final-Project.Rmd
