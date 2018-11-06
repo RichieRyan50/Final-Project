@@ -1,7 +1,9 @@
 library(shiny)
 library(tidyverse)
-compare <- read_csv("~/Desktop/Gov 1005 Final Project/Final-Project/fandango_score_comparison.csv")
-scrape <- read_csv("~/Desktop/Gov 1005 Final Project/Final-Project/fandango_scrape.csv")
+
+
+compare <- read.csv("fandango_score_comparison.csv")
+scrape <- read.csv("fandango_scrape.csv")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
